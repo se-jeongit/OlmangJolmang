@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-function Home() {
-   const [timer, setTimer ] = useState("00:00:00");
 
-   const currentTimer = () => {
-    const date = new Date();
-   
-    const hours = String(date.getHours()).padStart(2,"0");
-    const minutes = String(date.getMinutes()).padStart(2,"0");
-    const seconds = String(date.getSeconds()).padStart(2,"0");
-    setTimer(`${hours}:${minutes}:${seconds}`)
-   }
-
-   const startTimer = () => {
-    setInterval(currentTimer, 1000);
-   }
-
-   startTimer()
-
+function CustomCalender() {
+    const headleDayCellContent = (arg) => {
+        const dayNumber = arg.dayNumberText.replace("일", "");
+        return dayNumber;
+    };
     return (
-        <div>
-            <main>
-                <div>
-                    <h1>{timer}</h1>
-                </div>
-            </main>  
-        </div>
-    );   
+        <>
+            <div style={{ margin:15, display:'grid',gridTemplateColumns:"2fr 1fr"}}>
+                <FullCalendar
+                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                    initialView="dayGridMonth" // 처음 보이는 부분은 달
+                    locale="ko" // 한국어 설정
+                    // 상단의 핸들바
+                    headerToolbar={{
+                        left: "prev,next today", //이전달, 다음달
+                        center: "title", //제목
+                        right: "dayGridMonth,timeGridWeek,timeGridDay", //오늘
+                    }}
+                    buttonText={{ 
+                    today: "현재날짜", // 오늘 버튼의 텍스트 
+                    month: "월", // 월 버튼의 텍스트 
+                    week: "주", // 주 버튼의 텍스트 
+                    day: "일", // 일 버튼의 텍스트
+                }} 
+                    dayCellContent={headleDayCellContent}
+                />
+            </div>
+        </>
+    );
 }
 
-export default Home;
+export default CustomCalender;

@@ -28,6 +28,27 @@ header {
 	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05);
 }
 
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav_logo {
+	font-size: 1.3em;
+}
+
+.nav_menu {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding-left: 0;
+}
+
+.nav_menu li {
+	padding: 8px 30px;
+}
+
 /* main */
 main {
 	margin: 60px auto;
@@ -36,6 +57,16 @@ main {
 	flex-direction: column;
 	min-height: 100vh;
 	align-items: center;
+}
+
+/* 일요일 날짜: 빨간색 */
+.fc-day-sun a {
+    color: red;
+}
+
+/* 토요일 날짜: 파란색 */
+.fc-day-sat a {
+    color: blue;
 }
 
 /* footer */

@@ -15,9 +15,9 @@ function Footer() {
                 </div>
             </div>
 
-            <div>
-                Footer
-            </div>
+            <footer>
+                <dif><p>Copyright &copy; Your website 2025</p></dif>
+            </footer>
         </>
     );
 }
