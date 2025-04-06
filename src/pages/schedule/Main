@@ -1,0 +1,10 @@
+import React from "react";
+import "./styles/schedule.css";
+
+function ScheduleWrite() {
+    return(
+        <></>
+    );
+}
+
+export default ScheduleWrite;
