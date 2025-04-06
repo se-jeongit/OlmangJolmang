@@ -1,9 +1,8 @@
 import React from "react";
-import "./styles/schedule.css";
 
 function ScheduleWrite() {
     return(
-        <></>
+        <div>ddd</div>
     );
 }
 
