@@ -34,11 +34,7 @@ header {
 /* main */
 main {
 	margin: 60px auto;
-	width: 1280px;
-	display: flex;
-	flex-direction: column;
 	min-height: 100vh;
-	align-items: center;
 }
 
 /* 일요일 날짜: 빨간색 */

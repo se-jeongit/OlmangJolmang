@@ -14,10 +14,8 @@ function Footer() {
                     <div class="typing-shadow"></div>
                 </div>
             </div>
-
-            <footer>
-                <dif><p>Copyright &copy; Your website 2025</p></dif>
-            </footer>
+        
+            <div><p>Copyright &copy; Your website 2025</p></div>
         </>
     );
 }

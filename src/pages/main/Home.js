@@ -12,7 +12,8 @@ function CustomCalender() {
     };
     return (
         <>
-            <div style={{ margin:15, display:'grid',gridTemplateColumns:"2fr 1fr"}}>
+            <button>햄버거</button>
+            <div class = "calendar">
                 <FullCalendar
                     plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                     initialView="dayGridMonth" // 처음 보이는 부분은 달

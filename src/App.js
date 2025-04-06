@@ -1,4 +1,5 @@
 import "./styles/style.css";
+import "./styles/layout.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Main from "./pages/main/Home"
@@ -12,14 +13,16 @@ function App() {
       <BrowserRouter>
       <header>
       <Header/>
-    </header>
-              <Routes>
-                  <Route path="/" element ={<Main/>}></Route>
-                  <Route  path="*" element={<NotFound/>}></Route>
-              </Routes>
-              <footer>
-              <Footer/>
-              </footer>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element ={<Main/>}></Route>
+          <Route  path="*" element={<NotFound/>}></Route>
+        </Routes>
+      </main>
+      <footer>
+      <Footer/>
+      </footer>
       </BrowserRouter>
     </div>
   );
