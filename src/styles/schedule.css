@@ -1,2 +1,5 @@
 @import url(style.css);
 
+.container {
+    margin: 1rem;
+}
