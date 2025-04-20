@@ -4,7 +4,7 @@ function Header() {
     return (
         <nav className="navbar">
             <div className="nav_logo">
-                <a href="/home">올망졸망 캘린더</a>
+                <a href="/">올망졸망 캘린더</a>
             </div>
 
             <ul className="nav_menu">
