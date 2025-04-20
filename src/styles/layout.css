@@ -16,7 +16,13 @@ header {
 	align-items: center;
 }
 
+.navbar a {
+	text-decoration: none;
+	color: inherit; /* 원하는 경우 기본 텍스트 색상 상속 */
+}
+
 .nav_logo {
+	padding: 1rem;
 	font-size: 1.3em;
 }
 
@@ -33,6 +39,7 @@ header {
 
 /* main */
 main {
+	padding: 1rem;
 	margin: 60px auto;
 	min-height: 100vh;
 }
@@ -47,10 +54,130 @@ main {
     color: blue;
 }
 
+/* 제목 볼드 빼기 */
+.fc .fc-toolbar-title {
+    font-weight: normal;
+}
+
+/* 일정표 툴 바  */
+.fc .fc-toolbar.fc-header-toolbar {
+    margin: 0;
+    padding: 0 40px;
+	background: linear-gradient(135deg,
+	#DCEEFF,  /* 연한 하늘 */
+	#A3C4F3,  /* 파스텔 블루 */
+	#B39DDB,  /* 연보라 */
+	#957DAD,  /* 톤다운 보라 */
+	#7E57C2   /* 진보라 */
+	);
+    height: 60px;
+    
+    font-size: 12px;
+    line-height: 30px;
+    color: #F7F9FA;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/* 툴바의 버튼 */
+.fc .fc-toolbar-chunk .fc-button {
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+}
+
+/* 공통 버튼 스타일 */
+.fc .fc-button {
+    color: #F7F9FA !important; /* 글자색깔*/
+    border: none !important;
+    font-size: 14px;
+    margin: 0 5px;
+    padding: 6px 12px;
+}
+
+/* hover 시 */
+.fc .fc-button:hover {
+    background-color: #9AA6B2 !important;
+}
+
+/* active (클릭되었을 때, 현재 선택된 뷰) */
+.fc .fc-button-active {
+    background-color: #67abf8 !important;
+    color: white !important;
+}
+
+/* 툴바 사용 불가 버튼 스타일 */
+.fc .fc-toolbar-chunk .fc-button:disabled {
+    color: #F7F9FA;
+}
+
+/* 툴바 사용 불가 버튼 hover 시 스타일 주지 않기 */
+.fc .fc-toolbar-chunk .fc-button:disabled:hover {
+    background-color: transparent;
+}
+
+/* 툴바 버튼 포커스 시 그림자 제거 */
+.fc .fc-toolbar-chunk .fc-button:focus {
+    box-shadow: none;
+}
+
+/* 툴바 버튼 hover 시 배경색 변경 */
+.fc .fc-toolbar-chunk .fc-button:hover {
+    background-color: #9AA6B2;
+}
+
+/* 날짜변경 화살표 아이콘 */
+.fc .fc-button-primary span {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+/* 요일의 높이 */
+.fc-theme-standard th {
+    height: 40px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7b7b7b;
+    vertical-align: middle;
+}
+
+/* Tody Cell에 배경색 주기 */
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #ebf2fa;
+}
+
+/* 날짜 Cell 프레임 */
+.fc .fc-daygrid-day-frame {
+    padding: 10px;
+}
+
+/* 월간,주간 view의 Cell이 시작하는 위치 */
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+    height: 30px;
+    margin-bottom: 3px;
+}
+
+/* 날짜 숫자 z-index 초기화 */
+.fc .fc-daygrid-day-number {
+    z-index: auto !important;
+}
+
+/* 이벤트 막대 스타일 */
+.fc-event {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
 /* footer */
 footer {
 	margin-top: auto;
-	padding: 1rem;
+	padding: 2.5rem 1rem; /* 상하 2.5rem, 좌우 1rem */
 	text-align: center;
 	width: 100%;
 	left: 0px; bottom: 0px; background: #F7F9FA;
