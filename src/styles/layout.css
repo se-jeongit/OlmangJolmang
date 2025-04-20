@@ -31,9 +31,51 @@ header {
 	padding: 8px 30px;
 }
 
+.main-friend {
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+.main-friend,
+.main-friend span {
+	display:flex;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+/* main frined */
+.main-friend {
+	position: relative;
+	width: 30px;
+	height: 20px;
+}
+
+
+.main-friend span {
+	position: absolute;
+	left: 0;
+	width: 60%;
+	height: 3px;
+	background-color: #333;
+	border-radius: 4px;
+	
+}
+
+.main-friend span:nth-of-type(1) {
+	top: 0;
+}
+
+.main-friend span:nth-of-type(2) {
+	top: 9px;
+}
+
+.main-friend span:nth-of-type(3) {
+	bottom: 0;
+}
+
 /* main */
 main {
-	margin: 60px auto;
+	margin: 30px auto 40px;
 	min-height: 100vh;
 }
 
