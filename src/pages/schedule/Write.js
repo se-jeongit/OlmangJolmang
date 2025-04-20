@@ -1,9 +1,9 @@
+import "../../styles/schedule.css";
 import React from "react";
-import "./styles/schedule.css";
 
 function ScheduleWrite() {
     return(
-        <></>
+        <div className="container">일정표</div>
     );
 }
 
