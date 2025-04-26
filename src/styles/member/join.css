@@ -1,4 +1,4 @@
-.login-main {
+.join-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,45 +6,41 @@
     height: 100%;
 }
 
-.login-area {
+.join-area {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-title {
+.join-title {
     font-size: 25px;
     padding: 2em 0 2em 0;
 }
 
 .input-inner {
-    width: 408px;
-    height: 64px;
+    width: 308px;
+    height: 32px;
     margin: 0 0 1.2em;
     padding: 0 1.2em;
-    font-size: 18px;
 }
 
-.login-checkarea {
+.join-checkarea {
     display: flex;
     margin: 0 0 1.2em;
     width: 100%;
-    font-size: 18px;
 }
 
-.login-checkarea > input {
+.join-checkarea > input {
     margin: 0 0.5em 0 0;
 }
 
 .input-button {
-    width: 408px;
-    height: 64px;
+    width: 308px;
+    height: 32px;
     margin: 0 0 1.2em;
     padding: 0 1.2em;
-    font-size: 18px;
 }
 
-.login-super {
+.join-super {
     text-align: center;
-    font-size: 16px;
 }
