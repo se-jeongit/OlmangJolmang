@@ -12,19 +12,27 @@ function CustomCalender() {
     };
     return (
         <>
-            <a className="main-friend" href="#">
+            {/* <a className="main-friend" href="#">
                 <span></span>
                 <span></span>
                 <span></span>
-            </a>
-            <div class = "calendar">
+            </a> */}
+            <div className="calendar">
                 <FullCalendar
                     plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                     initialView="dayGridMonth" // 처음 보이는 부분은 달
                     locale= {"ko"} // 한국어 설정
+                    customButtons={{
+                        barButton: {
+                        text: '일정',
+                        click: () => {
+                            alert('Bar 버튼 클릭!');
+                        }
+                        }
+                    }}
                     // 상단의 핸들바
                     headerToolbar={{
-                        left: "prev,next today", //이전달, 다음달
+                        left: "prev,next today barButton", //이전달, 다음달
                         center: "title", //제목
                         right: "dayGridMonth,timeGridWeek,timeGridDay", //오늘
                     }}
