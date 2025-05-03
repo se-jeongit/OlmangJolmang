@@ -12,11 +12,6 @@ function CustomCalender() {
     };
     return (
         <>
-            {/* <a className="main-friend" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a> */}
             <div className="calendar">
                 <FullCalendar
                     plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

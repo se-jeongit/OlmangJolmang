@@ -1,0 +1,46 @@
+.login-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 25px;
+    padding: 2em 0 2em 0;
+}
+
+.input-inner {
+    width: 308px;
+    height: 32px;
+    margin: 0 0 1.2em;
+    padding: 0 1.2em;
+}
+
+.login-checkarea {
+    display: flex;
+    margin: 0 0 1.2em;
+    width: 100%;
+}
+
+.login-checkarea > input {
+    margin: 0 0.5em 0 0;
+}
+
+.input-button {
+    width: 308px;
+    height: 32px;
+    margin: 0 0 1.2em;
+    padding: 0 1.2em;
+}
+
+.login-super {
+    text-align: center;
+}
