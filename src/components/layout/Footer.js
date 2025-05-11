@@ -19,10 +19,10 @@ function Footer() {
             <div className="layout-footer">
                 <div className="footer-main">
                     <a href="/" className="item">공지사항</a>
-                    <a href="/" className="item">자주 묻는 질문</a>
-                    <a href="/" className="item">문의하기</a>
+                    | <a href="/" className="item">자주 묻는 질문</a>
+                    | <a href="/" className="item">문의하기</a>
                 </div>
-                <div className="line"></div>
+                <hr className="line"/>
                 <div className="footer-info">
                     {/* <button type="button" className="name">
                         올망졸망캘린더

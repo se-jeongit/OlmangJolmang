@@ -92,12 +92,10 @@ header {
 
 /* main */
 main {
-	margin: 30px auto 40px;
 	min-height: 100vh;
 }
 
 .calendar {
-	padding: 1rem;
 	box-sizing: border-box;
 	width: 100%;
 }
@@ -122,19 +120,11 @@ main {
 .fc .fc-toolbar.fc-header-toolbar {
     margin: 0;
     padding: 0 40px;
-	background: linear-gradient(135deg,
-	#DCEEFF,  /* 연한 하늘 */
-	#A3C4F3,  /* 파스텔 블루 */
-	#B39DDB,  /* 연보라 */
-	#957DAD,  /* 톤다운 보라 */
-	#7E57C2   /* 진보라 */
-	);
+	background:	#DCEEFF; /* 연한 하늘 */
     height: 60px;
     
     font-size: 13px;
     line-height: 30px;
-    color: #F7F9FA;
-    border-radius: 20px 20px 0px 0px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -143,23 +133,26 @@ main {
 
 /* 왼쪽 버튼 그룹 */
 .fc .fc-toolbar-chunk:first-child {
-  flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	flex: 0 0 auto;  /* ⭐️ 왼쪽 영역 고정 (줄어들지 않게) */
 }
 
 /* 가운데 제목 영역 */
 .fc .fc-toolbar-chunk:nth-child(2) {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  white-space: nowrap;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row; /* ⭐️ 가로 나열 */
+	align-items: center; /* 수직 중앙 정렬 */
+	justify-content: center; /* 수평 중앙 정렬 */
+	gap: 10px; /* 버튼과 제목 사이 간격 (원하는 값으로 조정) */
 }
 
 /* 오른쪽 버튼 그룹 */
 .fc .fc-toolbar-chunk:last-child {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	flex: 0 0 auto;
 }
 
 
@@ -168,11 +161,11 @@ main {
     background-color: transparent;
     border: none;
     font-size: 1rem;
+	color: #333;
 }
 
 /* 공통 버튼 스타일 */
 .fc .fc-button {
-    color: #F7F9FA !important; /* 글자색깔*/
     border: none !important;
     font-size: 14px;
     margin: 0 5px;
@@ -184,15 +177,9 @@ main {
     background-color: #9AA6B2 !important;
 }
 
-/* active (클릭되었을 때, 현재 선택된 뷰) */
-.fc .fc-button-active {
-    background-color: #67abf8 !important;
-    color: white !important;
-}
-
 /* 툴바 사용 불가 버튼 스타일 */
 .fc .fc-toolbar-chunk .fc-button:disabled {
-    color: #F7F9FA;
+    color: #7b7b7b;
 }
 
 /* 툴바 사용 불가 버튼 hover 시 스타일 주지 않기 */
@@ -203,17 +190,6 @@ main {
 /* 툴바 버튼 포커스 시 그림자 제거 */
 .fc .fc-toolbar-chunk .fc-button:focus {
     box-shadow: none;
-}
-
-/* 툴바 버튼 hover 시 배경색 변경 */
-.fc .fc-toolbar-chunk .fc-button:hover {
-    background-color: #9AA6B2;
-}
-
-/* 날짜변경 화살표 아이콘 */
-.fc .fc-button-primary span {
-    font-weight: 500;
-    font-size: 28px;
 }
 
 /* 요일의 높이 */
@@ -279,6 +255,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 12px;  /* 간격을 gap으로 관리 */
+	padding: 5px;
 }
 
 .footer-main a {
@@ -297,18 +274,19 @@ footer {
 	display: flex;
 	align-items: center;
 	position: relative;
+	text-decoration: none;
 }
 
-/* 구분자 '|'를 ::before로 삽입하되, 높이 맞춤 */
-.footer-main .item + .item::before {
-	content: "|";
-	color: #2f3438;
-	padding-right: 12px;
-	display: inline-block;
-	font-size: 12px;
-	line-height: 1;
+.footer-main .item:hover {
+	font-weight: 600;
 }
 
 .footer-info {
 	font-size: 10px;
+	padding: 5px;
+}
+
+.line {
+	border-color: #fff;
+	border-width: 1px 0 0 0;
 }
