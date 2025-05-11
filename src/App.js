@@ -9,6 +9,7 @@ import Login from "./pages/member/Login.js";
 import IdFind from "./pages/member/IdFind.js";
 import PwdCheck from "./pages/member/PwdCheck.js";
 import ScheduleWrite from "./pages/schedule/Write.js";
+import Admin from "./pages/admin/Admin.js";
 
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/idFind" element={<IdFind/>}></Route>
             <Route path="/pwdCheck" element={<PwdCheck/>}></Route>
             <Route path="/schedule" element={<ScheduleWrite/>}></Route>
+            <Route path="/admin" element={<Admin/>}></Route>
           </Routes>
         </main>
 
