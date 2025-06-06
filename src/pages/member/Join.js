@@ -1,7 +1,9 @@
-import React from "react";
 import "../../styles/member/join.css";
+import * as Header from "../../components/layout/Header";
 
 const Login = () =>{
+    Header.setTitle("회원가입")
+    
     return (
         <div className="join-main">
             <h3 className="join-title">회원가입</h3>

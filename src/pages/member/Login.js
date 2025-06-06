@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import * as Header from "../../components/layout/Header";
 import "../../styles/member/login.css";
 
 const Login = () =>{
+    Header.setTitle("로그인")
+    
     const [idChecker, setIdChecker] = useState(Boolean(false))
     const [pwdChecker, setPwdChecker] = useState(Boolean(false))
     const [idVal, setIdVal] = useState(String(""))
@@ -19,10 +22,8 @@ const Login = () =>{
             
             if (targetValue.value === '') {
                 elements.style.border = '1px solid red'
-                elements.style.margin = '0 0 0.6em'
             } else {
                 elements.style.removeProperty('border')
-                elements.style.margin = '0 0 1.2em'
             }
             
             setIdVal(targetValue.value)
@@ -33,10 +34,8 @@ const Login = () =>{
 
             if (targetValue.value === '') {
                 elements.style.border = '1px solid red'
-                elements.style.margin = '0 0 0.6em'
             } else {
                 elements.style.removeProperty('border')
-                elements.style.margin = '0 0 1.2em'
             }
 
             setPwdVal(targetValue.value)
@@ -52,7 +51,6 @@ const Login = () =>{
                 const elements = document.getElementById('idInput')
 
                 elements.style.border = '1px solid red'
-                elements.style.margin = '0 0 0.6em'
             }
 
             if (pwdVal === '') {
@@ -60,30 +58,19 @@ const Login = () =>{
                 const elements = document.getElementById('pwdInput')
 
                 elements.style.border = '1px solid red'
-                elements.style.margin = '0 0 0.6em'
             }
         }
     }
     return (
         <div className="login-main">
-            <h3 className="login-title">로그인</h3>
-            <div className="login-area">
-                <div className="login-input">
-                    <div className="login-id">
-                        <input id="idInput" className="input-inner" placeholder="아이디를 입력해주세요" onBlur={loginInput} />
-                    </div>
-                    {idChecker && idVal === '' ? <div className="input-error">아이디를 입력해주세요</div> : ""}
-                    <div className="login-pw">
-                        <input id="pwdInput" className="input-inner" type='password' placeholder="비밀번호를 입력해주세요" onBlur={loginInput} />
-                    </div>
-                    {pwdChecker && pwdVal === '' ? <div className="input-error">비밀번호를 입력해주세요</div> : ""}
+            <h3 className="login-title"><div className="login-image"><img src=""></img></div>𝑶𝒍𝒎𝒂𝒏𝒈𝒋𝒐𝒍𝒎𝒂𝒏𝒈</h3>
+            <form className="login-area">
+                <div className="login-id">
+                    <input id="idInput" className="id input-inner" placeholder="이메일" onBlur={loginInput} />
                 </div>
-
-                <div className="login-checkarea">
-                    <input type="checkbox"></input>
-                    아이디 저장
+                <div className="login-pw">
+                    <input id="pwdInput" className="pwd input-inner" type='password' placeholder="비밀번호" onBlur={loginInput} />
                 </div>
-
                 <div className="login-sub-main">
                     <div className="login-submit">
                         <button className="input-button" onClick={loginCheck}>
@@ -92,14 +79,11 @@ const Login = () =>{
                     </div>
 
                     <div className="login-super">
-                        <a href="/idFind">아이디 찾기</a>
-                        <span aria-hidden> | </span>
-                        <a href="/pwdCheck">비밀번호 찾기</a>
-                        <span aria-hidden> | </span>
-                        <a href="/join">회원가입</a>
+                        <a className="login-atag" href="/pwdReset">비밀번호 재설정</a>
+                        <a className="login-atag" href="/join">회원가입</a>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
