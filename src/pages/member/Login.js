@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as Header from "../../components/layout/Header";
-import "../../styles/member/login.css";
+import "../../styles/member/member.css";
 
 const Login = () =>{
     Header.setTitle("로그인")
@@ -62,7 +62,7 @@ const Login = () =>{
         }
     }
     return (
-        <div className="login-main">
+        <div className="member-main">
             <h3 className="login-title"><div className="login-image"><img src=""></img></div>𝑶𝒍𝒎𝒂𝒏𝒈𝒋𝒐𝒍𝒎𝒂𝒏𝒈</h3>
             <form className="login-area">
                 <div className="login-id">
