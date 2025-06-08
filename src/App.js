@@ -6,15 +6,13 @@ import Main from "./pages/main/Home.js";
 import NotFound from "./components/error/NotFound.js";
 import Join from "./pages/member/Join.js";
 import Login from "./pages/member/Login.js";
-import IdFind from "./pages/member/IdFind.js";
-import PwdCheck from "./pages/member/PwdCheck.js";
+import PwdReset from "./pages/member/PwdReset.js";
 import ScheduleWrite from "./pages/schedule/Write.js";
 import Admin from "./pages/admin/Admin.js";
 
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 
 function App() {
-  
   return (
     <div>
       <BrowserRouter>
@@ -29,8 +27,7 @@ function App() {
             <Route path="*" element={<NotFound/>}></Route>
             <Route path="/join" element={<Join/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
-            <Route path="/idFind" element={<IdFind/>}></Route>
-            <Route path="/pwdCheck" element={<PwdCheck/>}></Route>
+            <Route path="/pwdReset" element={<PwdReset/>}></Route>
             <Route path="/schedule" element={<ScheduleWrite/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
           </Routes>

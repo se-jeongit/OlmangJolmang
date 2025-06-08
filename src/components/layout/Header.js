@@ -2,6 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faBell } from '@fortawesome/free-solid-svg-icons';
 
+export function setTitle (title) {
+    document.querySelector("title").innerHTML = title;
+}
+
 function Header() {
     return (
         <nav className="navbar">
