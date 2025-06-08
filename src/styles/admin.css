@@ -1,0 +1,52 @@
+@import url(style.css);
+
+.admin-main {
+    /* border-top: 1px; */
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.tepbar {
+     display: flex; 
+     flex-direction: row;
+     height: 500px;
+     width: 900px;
+     margin: 0 auto;
+}
+
+.tabs-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.tab-button.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: left 0.25s ease, width 0.25s ease;
+}
