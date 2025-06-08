@@ -1,5 +1,104 @@
 @import url(style.css);
 
 .container {
-    margin: 1rem;
+    margin: 40px 32px 40px;
+}
+
+.title h3 {
+    font-size: 2em;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+.write-form td {
+    min-width: 100px;
+    padding: 10px 0;
+    font-size: 1.1em;
+}
+
+.circle-picker {
+    width: auto !important;
+    max-width: 100%;
+    margin: 0 !important;
+}
+
+.circle-picker span {
+    display: inline-block;
+    width: 30px !important;
+    height: 30px !important;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+    font-size: 1em;
+    padding: 10px;
+    width: 500px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-date {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+  
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 5.5px;
+    top: 1.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-check-label {
+    padding-left: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin: 0 10px;
+}
+
+.custom-btn:hover {
+    opacity: 0.9;
 }
