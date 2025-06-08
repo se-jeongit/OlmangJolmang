@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState  } from 'react';
+import Sidebar from "../../components/layout/Sidebar";
+import Event from "../../components/layout/Event";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -19,6 +21,43 @@ function CustomCalender() {
         return dayNumber;
     };
 
+    // 일정추가 
+    const [events, setEvents] = useState([]);  // 초기에는 일정 없음
+
+    const [newEvent, setNewEvent] = useState({
+        content_title : "",
+        description : "",
+        location : "",
+        start : "",
+        end : "",
+    });
+
+    const handleSave = () => {
+        const event = {
+            title : `${newEvent.content_title} - ${newEvent.description}`,
+            start : newEvent.start,
+            end : newEvent.end,
+            location : newEvent.location
+        };
+        setEvents(prev => [...prev, event]);
+        setNewEvent({content_title: "", description: "", location: "", start : "", end: ""});
+        setModalOpen(false); // 저장 후 모달 닫기
+    };
+    
+    // 모달
+    const [ modalOpen, setModalOpen ] = useState(false);
+
+    const handleDateClick  = (arg) => {
+        // 클릭한 날짜를 시작일과 종료일로 초기값 지정
+        setNewEvent({
+            ...newEvent,
+            start : arg.dateStr,
+            end : arg.dateStr
+        });
+        setModalOpen(true);
+    };
+
+    // 드롭다운
     useEffect(() => {
         // headerToolbar에 드롭다운 select 엘리먼트 삽입
         const dropdownContainer = document.querySelector('.fc-toolbar-chunk .fc-customDropdown-button');
@@ -47,44 +86,56 @@ function CustomCalender() {
     }, []);
 
     return (
-        <div className="calendar">
-            <FullCalendar
-                ref={calendarRef}
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-                initialView="dayGridMonth"
-                navLinks={true}
-                editable={true}
-                selectable={true}
-                nowIndicator={true}
-                dayMaxEvents={true}
-                locale={"ko"}
-                customButtons={{
-                    customDropdown: {
-                        text: '', // select로 대체할 거라 text는 비워둠
-                        click: () => {}
-                    },
-                    barButton: {
-                        text: '일정',
-                        click: () => {
-                        alert('Bar 버튼 클릭!');
-                        }
-                    }
-                }}
-                headerToolbar={{
-                    left: "prev next today barButton",
-                    center: "title",
-                    right: "customDropdown" // 드롭다운을 custom 버튼으로 넣기
-                }}
-                buttonText={{
-                    today: "오늘",
-                    month: "월",
-                    week: "주",
-                    day: "일",
-                    list: "일정목록"
-                }}
-                dayCellContent={handleDayCellContent}
+        <>
+            <div className='wrap_manager'>
+                <Sidebar/>
+            </div>
+
+            <Event
+                modalOpen={modalOpen}
+                setModalOpen={setModalOpen}
+                newEvent={newEvent}
+                setNewEvent={setNewEvent}
+                setEvents={setEvents}
+                handleSave={handleSave}
             />
-        </div>
+
+            <div className="calendar">
+                <FullCalendar
+                    height={921}
+                    ref={calendarRef}
+                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+                    initialView="dayGridMonth"
+                    navLinks={true}
+                    editable={true}
+                    selectable={true}
+                    nowIndicator={true}
+                    dayMaxEvents={true}
+                    locale={"ko"}
+                    events={events}
+                    dateClick={handleDateClick }
+                    customButtons={{
+                        customDropdown: {
+                            text: '', // select로 대체할 거라 text는 비워둠
+                            click: () => {}
+                        },
+                    }}
+                    headerToolbar={{
+                        left: "prev next today barButton",
+                        center: "title",
+                        right: "customDropdown" // 드롭다운을 custom 버튼으로 넣기
+                    }}
+                    buttonText={{
+                        today: "오늘",
+                        month: "월",
+                        week: "주",
+                        day: "일",
+                        list: "일정목록"
+                    }}
+                    dayCellContent={handleDayCellContent}
+                />
+            </div>
+        </>
     );
 }
 

@@ -17,27 +17,25 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+          <header>
+            <Header/>
+          </header>
 
-        <header>
-          <Header/>
-        </header>
+          <main>
+            <Routes>
+              <Route path="/" element ={<Main/>}></Route>
+              <Route path="*" element={<NotFound/>}></Route>
+              <Route path="/join" element={<Join/>}></Route>
+              <Route path="/login" element={<Login/>}></Route>
+              <Route path="/idFind" element={<IdFind/>}></Route>
+              <Route path="/pwdCheck" element={<PwdCheck/>}></Route>
+              <Route path="/schedule" element={<ScheduleWrite/>}></Route>
+            </Routes>
 
-        <main>
-          <Routes>
-            <Route path="/" element ={<Main/>}></Route>
-            <Route path="*" element={<NotFound/>}></Route>
-            <Route path="/join" element={<Join/>}></Route>
-            <Route path="/login" element={<Login/>}></Route>
-            <Route path="/idFind" element={<IdFind/>}></Route>
-            <Route path="/pwdCheck" element={<PwdCheck/>}></Route>
-            <Route path="/schedule" element={<ScheduleWrite/>}></Route>
-          </Routes>
-        </main>
-
-        <footer>
-          <Footer/>
-        </footer>
-
+            <footer className="doc-footer">
+              <Footer/>
+            </footer>
+          </main>
       </BrowserRouter>
     </div>
   );

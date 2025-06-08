@@ -17,19 +17,12 @@ function Footer() {
         
             {/* footer */}
             <div className="layout-footer">
-                <div className="footer-main">
-                    <a href="/" className="item">공지사항</a>
-                    | <a href="/" className="item">자주 묻는 질문</a>
-                    | <a href="/" className="item">문의하기</a>
-                </div>
-                <hr className="line"/>
-                <div className="footer-info">
-                    {/* <button type="button" className="name">
-                        올망졸망캘린더
-                        <span className="button-arrow"></span>
-                    </button> */}
-                    <p>Copyright 2025. OlmangJolmang, Co., Ltd. All rights reserved.</p>
-                </div>
+                <h2 className="screen_out">문의안내</h2>
+                <ul className="list_service">
+                    <li><a className="link_txt" href="/">공지사항</a></li>
+                    <li><a className="link_txt" href="/">자주 묻는 질문</a></li>
+                    <li><a className="link_txt" href="/">문의하기</a></li>
+                </ul>
             </div>
         </>
     );
