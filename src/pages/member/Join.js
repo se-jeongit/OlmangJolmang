@@ -40,7 +40,7 @@ const Login = () =>{
             <form>
                 <div>
                     <label className="sub-title">이메일</label>
-                    <input className="input-inner join-input" placeholder="이메일을 입력해주세요" />
+                    <input className="input-inner join-input first" placeholder="이메일을 입력해주세요" />
                 </div>
 
                 <div>
@@ -69,7 +69,7 @@ const Login = () =>{
 
                 <div>
                     <label className="sub-title">성별</label>
-                    <select>
+                    <select className="join-input">
                         <option value="M">
                             남자
                         </option>
@@ -89,6 +89,7 @@ const Login = () =>{
 
                 <div>
                     <label className="sub-title">약관동의</label>
+                    <div className="terms-main"></div>
                     <check></check>
                 </div>
 

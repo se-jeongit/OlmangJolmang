@@ -124,7 +124,6 @@
 
 .sub-title {
     display: block;
-    margin-bottom: 12px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
@@ -159,4 +158,20 @@
     height: 40px;
     margin: 12px 0px 28px;
     font-size: 14px;
+}
+
+.join-input.first {
+    margin: 12px 0px 10px;
+}
+
+.terms-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 308px;
+    height: 100%;
+    margin: 12px auto 28px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    padding: 40px;
+    border-radius: 4px;
 }
