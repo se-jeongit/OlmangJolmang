@@ -31,10 +31,11 @@ function App() {
             <Route path="/admin" element={<Admin/>}></Route>
           </Routes>
         </main>
-
+        
         <footer className="doc-footer">
           <Footer/>
         </footer>
+
       </BrowserRouter>
     </div>
   );

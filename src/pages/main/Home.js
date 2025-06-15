@@ -6,8 +6,11 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import getHolidays from '../../components/layout/Holiday';
+
 
 function CustomCalender() {
+
     const calendarRef = useRef(null);
 
     const handleViewChange = (e) => {
@@ -43,6 +46,45 @@ function CustomCalender() {
         setNewEvent({content_title: "", description: "", location: "", start : "", end: ""});
         setModalOpen(false); // 저장 후 모달 닫기
     };
+
+    // 공휴일
+    const [loadedYears, setLoadedYears] = useState(new Set());
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+    const handleDatesSet = (arg) => {
+        const year = arg.start.getFullYear();
+        setCurrentYear(year);  // 단순히 현재 연도 상태만 업데이트
+      };
+
+      const eventsRef = useRef(events);
+      const loadedYearsRef = useRef(loadedYears);
+    
+      useEffect(() => {
+        eventsRef.current = events;
+      }, [events]);
+    
+      useEffect(() => {
+        loadedYearsRef.current = loadedYears;
+      }, [loadedYears]);
+    
+      useEffect(() => {
+        if (loadedYearsRef.current.has(currentYear)) return;
+    
+        (async () => {
+          const holidays = await getHolidays(currentYear);
+    
+          const existingEventKeys = new Set(eventsRef.current.map(e => e.title + e.start));
+    
+          const newHolidays = holidays.filter(h => !existingEventKeys.has(h.title + h.start));
+    
+          setEvents(prev => [...prev, ...newHolidays]);
+          setLoadedYears(prev => {
+            const newSet = new Set(prev);
+            newSet.add(currentYear);
+            return newSet;
+          });
+        })();
+      }, [currentYear]);
     
     // 모달
     const [ modalOpen, setModalOpen ] = useState(false);
@@ -113,6 +155,7 @@ function CustomCalender() {
                     dayMaxEvents={true}
                     locale={"ko"}
                     events={events}
+                    datesSet={handleDatesSet}   // 뷰/날짜 변경 시 호출
                     dateClick={handleDateClick }
                     customButtons={{
                         customDropdown: {
