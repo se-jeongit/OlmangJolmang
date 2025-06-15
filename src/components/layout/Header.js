@@ -10,7 +10,7 @@ function Header() {
     return (
         <nav className="navbar">
             <div className="nav_logo">
-                <a href="/">올망졸망 캘린더</a>
+                <a href="/"><img src={process.env.PUBLIC_URL + "favicon.ico"} alt = "logo"/></a>
             </div>
 
             <ul className="nav_menu">

@@ -17,7 +17,7 @@ function Footer() {
         
             {/* footer */}
             <div className="layout-footer">
-                <h2 className="screen_out">문의안내</h2>
+                <p>Copyright 2025. Ollmangjolmang, Co., Ltd. All rights reserved.</p>
                 <ul className="list_service">
                     <li><a className="link_txt" href="/">공지사항</a></li>
                     <li><a className="link_txt" href="/">자주 묻는 질문</a></li>
