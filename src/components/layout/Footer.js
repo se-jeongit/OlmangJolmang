@@ -20,8 +20,8 @@ function Footer() {
                 <p>Copyright 2025. Ollmangjolmang, Co., Ltd. All rights reserved.</p>
                 <ul className="list_service">
                     <li><a className="link_txt" href="/">공지사항</a></li>
-                    <li><a className="link_txt" href="/">자주 묻는 질문</a></li>
-                    <li><a className="link_txt" href="/">문의하기</a></li>
+                    <li><a className="link_txt" href="/">자주 하는 질문</a></li>
+                    <li><a className="link_txt" href="/">문의사항</a></li>
                 </ul>
             </div>
         </>
