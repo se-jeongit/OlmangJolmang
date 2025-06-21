@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_KEY = "AIzaSyACKvPi2Ss8yUc8K56oa_T36T6Hs2A1PtE";
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KRY;
+console.log("API_KEY : ", API_KEY);
 const CALENDAR_ID = encodeURIComponent("ko.south_korea#holiday@group.v.calendar.google.com");
 
 const getHolidays = async (year) => {

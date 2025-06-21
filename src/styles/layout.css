@@ -103,7 +103,6 @@ header {
 /* main */
 main {
 	overflow-y: auto;
-	margin-left: 251px;
 }
 
 .calendar {
@@ -113,6 +112,7 @@ main {
 	flex-direction: column;
 	flex-wrap: wrap;
 	flex: 1 1 auto;
+	margin-left: 251px;
 }
 
 /* 일요일 날짜: 빨간색 */
