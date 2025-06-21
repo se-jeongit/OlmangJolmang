@@ -4,7 +4,7 @@ import React from "react";
 function ScheduleArticle() {
     return(
         <div className="container">
-
+            
         </div>
     );
 }
