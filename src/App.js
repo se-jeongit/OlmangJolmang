@@ -8,6 +8,7 @@ import Join from "./pages/member/Join.js";
 import Login from "./pages/member/Login.js";
 import PwdReset from "./pages/member/PwdReset.js";
 import ScheduleWrite from "./pages/schedule/Write.js";
+import FriendWrite from "./pages/friend/Write.js";
 import Admin from "./pages/admin/Admin.js";
 
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/pwdReset" element={<PwdReset/>}></Route>
             <Route path="/schedule" element={<ScheduleWrite/>}></Route>
+            <Route path="/friend" element={<FriendWrite/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
           </Routes>
         </main>
