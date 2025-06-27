@@ -17,7 +17,7 @@ function Header() {
                 <li><a href="#top"><FontAwesomeIcon icon={faBell} /></a></li>
                 <li><button><a href="#top">올망졸망</a></button></li>
                 <li><button><a href="/login">로그인</a></button></li>
-                <li><a href="#top"><FontAwesomeIcon icon={faGear}/></a></li>
+                <li><a href="/settings"><FontAwesomeIcon icon={faGear}/></a></li>
             </ul>
         </nav>
     );

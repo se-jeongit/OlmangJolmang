@@ -64,7 +64,13 @@ const Login = () =>{
     
     return (
         <div className="member-main">
-            <h3 className="login-title"><div className="login-image"><img src=""></img></div>𝑶𝒍𝒎𝒂𝒏𝒈𝒋𝒐𝒍𝒎𝒂𝒏𝒈</h3>
+            <a rel="stylesheet" type="text/css" href="/">
+                <h3 className="login-title">
+                    <div className="login-image">
+                        <img className="img" src={process.env.PUBLIC_URL + "favicon.ico"} alt = "logo"></img>
+                    </div>
+                𝑶𝒍𝒎𝒂𝒏𝒈𝒋𝒐𝒍𝒎𝒂𝒏𝒈</h3>
+            </a>
             <form className="login-area">
                 <div className="login-id">
                     <input id="idInput" className="id input-inner" placeholder="이메일" onBlur={loginInput} />

@@ -12,6 +12,10 @@
 }
 
 /* 로그인 페이지 CSS */
+.member-main a:hover {
+    text-decoration: none;
+}
+
 .login-title {
     font-size: 25px;
     margin: 0 0 20px;
@@ -20,10 +24,14 @@
 }
 
 .login-image {
-    width: 50px;
+    width: 75px;
     margin: 0 5px 0 0;
     height: 50px;
-    background-color: #e0e0e0fb;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
 }
 
 .id.input-inner {
@@ -174,4 +182,41 @@
     border: 1px solid rgba(0, 0, 0, .12);
     padding: 40px;
     border-radius: 4px;
+}
+
+/* 설정 CSS */
+.setting-sidebar {
+    position: fixed;
+    top:  71px;
+    left: 0;
+    bottom: 0;
+    z-index: 30;
+    overflow: hidden;
+    display: column;
+    width: 251px;
+    padding: 20px 0 0;
+    background-color: #fff;
+    border-right: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    box-sizing: border-box;
+}
+
+.setting-main {
+    margin: 0 0 0 251px;
+}
+
+.tab-menu {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab-menu > li > a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 50px auto;
 }
