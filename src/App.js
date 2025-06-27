@@ -7,6 +7,7 @@ import NotFound from "./components/error/NotFound.js";
 import Join from "./pages/member/Join.js";
 import Login from "./pages/member/Login.js";
 import PwdReset from "./pages/member/PwdReset.js";
+import Settings from "./pages/member/Settings.js";
 import ScheduleWrite from "./pages/schedule/Write.js";
 import FriendWrite from "./pages/friend/Write.js";
 import Admin from "./pages/admin/Admin.js";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/join" element={<Join/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/pwdReset" element={<PwdReset/>}></Route>
+            <Route path="/settings" element={<Settings/>}></Route>
             <Route path="/schedule" element={<ScheduleWrite/>}></Route>
             <Route path="/friend" element={<FriendWrite/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
