@@ -3,12 +3,42 @@ import React, { useState } from "react";
 import {CirclePicker} from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useDaumPostcodePopup } from 'react-daum-postcode';
 
 function ScheduleWrite() {
     const [color, setColor] = useState("#f44336");
 
     const handleChange = (selectedColor) => {
-      setColor(selectedColor.hex);
+        setColor(selectedColor.hex);
+    };
+
+    const open = useDaumPostcodePopup();
+    
+    const [zonecode, setZonecode] = useState('');
+    const [roadAddress, setLoadAddress] = useState('');
+    
+    const handleComplete = (data) => {
+        let fullAddress = data.address;
+        let extraAddress = '';
+    
+        if (data.addressType === 'R') {
+        if (data.bname !== '') {
+            extraAddress += data.bname;
+        }
+        if (data.buildingName !== '') {
+            extraAddress += extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+        }
+        fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+    
+        setZonecode(data.zonecode);  // 우편번호
+        setLoadAddress(fullAddress); // 도로명 주소
+        }
+    };
+      
+    const handleClick = () => {
+        open(
+        { onComplete: handleComplete },
+        );
     };
 
     return(
@@ -151,7 +181,31 @@ function ScheduleWrite() {
                                     id="form-place"
                                     className="form-control"
                                     placeholder="일정 장소를 입력하세요."
-                                />            
+                                />
+
+                                <div>
+                                    <label htmlFor="zone-code" />
+                                    <input
+                                        id="zone-code"
+                                        placeholder="우편번호"
+                                        disabled
+                                        value={zonecode}
+                                    />
+                                    <button type="button" onClick={handleClick}>
+                                        우편번호 찾기
+                                    </button>
+                                    <p>
+                                        <label htmlFor="road-address" />
+                                        <input
+                                        id="road-address"
+                                        placeholder="도로명주소"
+                                        disabled
+                                        value={roadAddress}
+                                        />
+                                    </p>
+                                    <input placeholder="상세주소"
+                                    />
+                                </div>
                             </td>
                         </tr>
 
