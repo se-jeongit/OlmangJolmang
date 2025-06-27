@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState  } from 'react';
 import Sidebar from "../../components/layout/Sidebar";
-import Event from "../../components/layout/Event";
+import Event from '../../components/layout/Event';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -31,8 +31,11 @@ function CustomCalender() {
         content_title : "",
         description : "",
         location : "",
-        start : "",
-        end : "",
+        startDate : "",
+        endDate : "",
+        startTime : "00:00",
+        endTime : "00:00",
+        allDay : false,
     });
 
     const handleSave = () => {
@@ -129,10 +132,6 @@ function CustomCalender() {
 
     return (
         <>
-            <div className='wrap_manager'>
-                <Sidebar/>
-            </div>
-
             <Event
                 modalOpen={modalOpen}
                 setModalOpen={setModalOpen}
@@ -142,41 +141,47 @@ function CustomCalender() {
                 handleSave={handleSave}
             />
 
-            <div className="calendar">
-                <FullCalendar
-                    height={921}
-                    ref={calendarRef}
-                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-                    initialView="dayGridMonth"
-                    navLinks={true}
-                    editable={true}
-                    selectable={true}
-                    nowIndicator={true}
-                    dayMaxEvents={true}
-                    locale={"ko"}
-                    events={events}
-                    datesSet={handleDatesSet}   // 뷰/날짜 변경 시 호출
-                    dateClick={handleDateClick }
-                    customButtons={{
-                        customDropdown: {
-                            text: '', // select로 대체할 거라 text는 비워둠
-                            click: () => {}
-                        },
-                    }}
-                    headerToolbar={{
-                        left: "prev next today barButton",
-                        center: "title",
-                        right: "customDropdown" // 드롭다운을 custom 버튼으로 넣기
-                    }}
-                    buttonText={{
-                        today: "오늘",
-                        month: "월",
-                        week: "주",
-                        day: "일",
-                        list: "일정목록"
-                    }}
-                    dayCellContent={handleDayCellContent}
-                />
+            <div className='main-container'>
+                <div className='wrap_manager'>
+                    <Sidebar/>
+                </div>
+
+                <div className="calendar">
+                    <FullCalendar
+                        height={921}
+                        ref={calendarRef}
+                        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+                        initialView="dayGridMonth"
+                        navLinks={true}
+                        editable={true}
+                        selectable={true}
+                        nowIndicator={true}
+                        dayMaxEvents={true}
+                        locale={"ko"}
+                        events={events}
+                        datesSet={handleDatesSet}   // 뷰/날짜 변경 시 호출
+                        dateClick={handleDateClick }
+                        customButtons={{
+                            customDropdown: {
+                                text: '', // select로 대체할 거라 text는 비워둠
+                                click: () => {}
+                            },
+                        }}
+                        headerToolbar={{
+                            left: "prev next today barButton",
+                            center: "title",
+                            right: "customDropdown" // 드롭다운을 custom 버튼으로 넣기
+                        }}
+                        buttonText={{
+                            today: "오늘",
+                            month: "월",
+                            week: "주",
+                            day: "일",
+                            list: "일정목록"
+                        }}
+                        dayCellContent={handleDayCellContent}
+                    />
+                </div>
             </div>
         </>
     );
