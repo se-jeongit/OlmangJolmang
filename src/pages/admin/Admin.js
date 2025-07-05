@@ -1,6 +1,7 @@
 import "../../styles/admin.css";
 import React, { useState, useEffect, useRef } from "react";
-import {TextField,Box, FormControl, InputLabel, NativeSelect} from '@mui/material';
+import {TextField,Box, FormControl, InputLabel, NativeSelect, IconButton} from '@mui/material';
+import {SearchIcon} from '@mui/icons-material'
 
 const Tabs = ({ selectedIndex, onSelectHandler, menus }) => {
   const [tabLayouts, setTabLayouts] = useState([]);
@@ -72,6 +73,43 @@ function Admin() {
     <div>
       <div className="admin-main">
         <h1>고객센터</h1>
+      </div>
+      {/* 고객센터 검색 */}
+      <div>
+
+        {/* <Box component="form" sx={{'& .MuiTextField-root': { m: 1, width: '40ch' },}} noValidate autoComplete="off">
+          <FormControl fullWidth>
+            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+               Age
+            </InputLabel>
+          <NativeSelect defaultValue={30} inputProps={{ name: 'age', id: 'uncontrolled-native',}}>
+              <option value={10}>Ten</option>
+              <option value={20}>Twenty</option>
+              <option value={30}>Thirty</option>
+          </NativeSelect>
+      </FormControl>
+      </Box>
+
+        <Box component="form" sx={{'& .MuiTextField-root': { m: 5, width: '300px' },}} noValidate autoComplete="off">
+          <div>
+            <TextField id="search" label="" type="search" variant="standard"/>
+          </div>
+        </Box>   */}
+
+        <Box component="form" sx={{'& .MuiTextField-root': { m: 1, width: '40ch' },}} noValidate autoComplete="off">
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <NativeSelect defaultValue={"none"} inputProps={{ name: 'category', id: 'uncontrolled-native',}}>
+              <option value={"none"}>통합검색</option>
+              <option value={"title"}>제목</option>
+              <option value={"publisher"}>출판사</option>
+              <option value={"chapter"}>단원</option>
+          </NativeSelect>
+      	</FormControl>
+          <TextField id="standard-search" type="search" variant="standard" />
+        <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+          <SearchIcon />
+        </IconButton>
+      </Box>
       </div>
 
       <div className="admin">
